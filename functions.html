@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Functions</title>
+    </head>
+    <body>
+        <h1>Named Function</h1>
+        <p id="demo"></p>
+        <h1>Anonymous Function</h1>
+        <p id="demo1"></p>
+        <h1>ArrowFunction</h1>
+        <p id="demo2"></p>
+        <script>
+            const p1 = 25;
+            const p2 = 22;
+            
+            function NamedFunction(p1,p2){
+               return p1*p2;
+            }
+            const p3 = NamedFunction(p1,p2)
+            document.getElementById("demo").innerHTML = p3;
+            
+            
+            const a = 32;
+            const b = 17;
+
+            let AnonymousFunction = function(a,b){
+                return a*b;
+            }
+            const c = AnonymousFunction(a,b);
+            document.getElementById("demo1").innerHTML = c;
+
+
+            const x = 10;
+            const y = 2;
+            let ArrowFunction = (x,y) => {
+                return (x-y)/(x+y)*(x+y)/(x-y);
+            }
+            const z = ArrowFunction(x,y);
+            document.getElementById("demo2").innerHTML = z;
+
+
+        </script>
+    </body>
+</html>

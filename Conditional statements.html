@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Conditional statements</title>
+</head>
+<body>
+    <h1>Automatic Greeting</h1>
+    <p id="demo"></p>
+    <div id="us">
+        <input id="first" type="number" placeholder="First number">
+        <br>    
+        <input id="second" type="number" placeholder="Second number">
+        <br>
+        <select id="operations">
+            <option value="Add">Add</option>
+            <option value="Subtract">Subtract</option>
+            <option value="Multiply">Multiply</option>
+            <option value="Divide">Divide</option>
+        </select>
+        <br>
+        <button onclick="calculate()">Calculate</button>
+        <p id="result"></p>
+    </div>
+
+    <script>
+        const time = new Date().getHours();
+        let greeting;
+        if (time < 12) {
+            greeting = "Good Morning";
+        } 
+        else if (time >= 12 && time < 16) {
+            greeting = "Good Afternoon";
+        } 
+        else if (time >= 16 && time < 20) {
+            greeting = "Good Evening";
+        } 
+        else {
+            greeting = "Good Night";
+        }
+        document.getElementById("demo").innerHTML = greeting;
+
+        function calculate() {
+            const a = parseFloat(document.getElementById("first").value);
+            const b = parseFloat(document.getElementById("second").value);
+            const operation = document.getElementById("operations").value;
+            let result;
+
+            switch(operation) {
+                case "Add":
+                    result = a + b;
+                    break;
+                case "Subtract":
+                    result = a - b;
+                    break;
+                case "Multiply":
+                    result = a * b;
+                    break;
+                case "Divide":
+                    result = a / b;
+                    break;
+                default:
+                    result = "Invalid operation";
+            }
+            document.getElementById("result").innerHTML = "Result: " + result;
+        }
+    </script>
+</body>
+</html>
